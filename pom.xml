@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.promotions</groupId>
+	<artifactId>interactive-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Interactive</name>
+	<description>Interactive Promotions Application</description>
+	<prerequisites>
+		<maven>2.2.1</maven>
+	</prerequisites>
+    <developers>
+        <developer>
+            <id>tom-myers</id>
+            <name>Tom Myers</name>
+            <email>tmyers1@yahoo.com</email>
+            <timezone>EST</timezone>
+        </developer>
+    </developers>
+	<modules>
+		<module>interactive-model</module>
+		<!--
+		<module>interactive-persistence</module>
+		<module>interactive-service</module>
+		<module>interactive-webapp</module>
+		-->
+	</modules>    
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${spring.version}</version>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${joda.version}</version>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-jaxrs</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+						
+			<!-- TESTING -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+    <properties>
+        <spring.version>3.1.0.RELEASE</spring.version>
+    	<joda.version>2.1</joda.version>
+    	<jackson.version>1.9.7</jackson.version>
+        <junit.version>4.8.1</junit.version>
+    </properties>
+</project>
